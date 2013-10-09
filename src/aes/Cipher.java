@@ -15,7 +15,7 @@ public class Cipher {
         this.roundKeys = roundKeys;
         this.message = message;
         
-        imprimir(message, "Mensaje original");
+        //imprimir(message, "Mensaje original");
     }
     
     public String cipher(){
@@ -35,7 +35,7 @@ public class Cipher {
         cipherText = ARK(cipherText, roundKeys.get(10)); 
         
         this.cipherText = cipherText;
-        imprimir(cipherText, "cifrado final");
+        //imprimir(cipherText, "cifrado final");
         
         String ans="";
         for (int j = 0; j < 4; j++) {
@@ -63,13 +63,13 @@ public class Cipher {
         plainText = ARK(plainText, roundKeys.get(0)); 
         
         this.plainText = plainText;
-        imprimir(plainText, "descifrado final");
+        //imprimir(plainText, "descifrado final");
         
         //se pasa la matriz a un string
         String ans="";
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                  
+                  ans+= plainText[j][i];
             }   
         }
         return ans;

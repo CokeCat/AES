@@ -33,6 +33,16 @@ public class KeyGenerator {
         return message;
     }
     
+    public String toWordfromStateArray(String state) {
+        String word = ""; 
+        for (int i = 0; i < state.length(); i+=2) {
+                int ascii = Integer.parseInt(state.substring(i, i+2), 16);
+                word += Character.toString((char)ascii);
+                System.out.println("123456 "+((char)ascii));
+            }
+        return word;
+    }        
+    
     public ArrayList<String[][]> createRoundkeys() {
         //llave inicial
         roundKeys.add(transposeMatrix(key));
