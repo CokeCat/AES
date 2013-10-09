@@ -34,11 +34,14 @@ public class Ventana extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        plaintextTF.setText("AES es muy facil");
         plaintextTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 plaintextTFActionPerformed(evt);
             }
         });
+
+        key1TF.setText("2b7e151628aed2a6abf7158809cf4f3c");
 
         cifrarB.setText("Cifrar");
         cifrarB.addActionListener(new java.awt.event.ActionListener() {
@@ -173,15 +176,16 @@ public class Ventana extends javax.swing.JFrame {
         Cipher cipher = new Cipher(roundKeys, message);
         ciphertextL.setText(cipher.cipher());
         
+        int cont = 0;
         for(String[][] rk:roundKeys) {
+            textArea.append("ROUND KEY "+(cont++)+"\n");
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
-                    String[] strings = rk[j];
-                    
+                    textArea.append(" "+rk[i][j]);
                 }
-                
+                textArea.append("\n");
             }
-            textArea.append(" ");
+            
         }
     }//GEN-LAST:event_cifrarBActionPerformed
 

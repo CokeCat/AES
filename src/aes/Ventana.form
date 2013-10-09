@@ -133,11 +133,17 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JTextField" name="plaintextTF">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="AES es muy facil"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plaintextTFActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="key1TF">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="2b7e151628aed2a6abf7158809cf4f3c"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="cifrarB">
       <Properties>
