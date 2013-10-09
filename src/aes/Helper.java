@@ -1,5 +1,8 @@
 
 package aes;
+
+import sun.org.mozilla.javascript.internal.regexp.SubString;
+
 /**
  * @author William
  */
@@ -169,17 +172,24 @@ public class Helper {
         return answer;
     }
     
-    public static String multiplyGF (String a, String b) {
+    public static String multiplyGF (String a, String b) {   
+        
+        if(a.equals("00") || b.equals("00")) return "00";
+        
         String aL = Helper.LTable(a.substring(0, 1), a.substring(1));
         String bL = Helper.LTable(b.substring(0, 1), b.substring(1));
         //System.out.println("        **aL="+aL+"  bL="+bL);
-        
+          
         int decimal = Integer.parseInt(aL, 16) + Integer.parseInt(bL, 16);
         decimal %= 255;
         //System.out.println("        **decimal="+decimal);
+        
         String hexa = Integer.toHexString(decimal);
         if(decimal<16) hexa = "0"+hexa;
-        //System.out.println("        **llava con la que buscaremos en ET="+hexa);    
+        //System.out.println("        **llava con la que buscaremos en ET="+hexa);
+        
+        
+        
         return Helper.ETable(hexa.substring(0, 1), hexa.substring(1));
     }
     
